@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 200vh;
+        }
+
+        button {
+            padding: .5em .7em;
+            border: 1px solid #8d8d8d;
+            background-color: white;
+            font-size: 1em;
+        }
+
+        .top-banner {
+            padding: 1em 0;
+            background-color: #ffd698;
+        }
+
+        .top-banner-inner {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 默认隐藏模态窗 */
+        .modal {
+            display: none;
+        }
+
+        /* 打开模态框，用半透明蒙层遮挡网页剩余内容 */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0; 
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-body {
+            position: fixed;
+            top: 3em;
+            bottom: 3em;
+            right: 20%;
+            left: 20%;
+            padding: 2em 3em;
+            background-color: white;
+            /* 内容超过指定高/宽，浏览器自动添加滚动条显示溢出内容 */
+            overflow: auto;
+        }
+
+        /* 鼠标悬浮在元素上，变成手势指针，方便用户交互 */
+        /* 父元素modal-body是固定定位，成为modal-close的包含块 */
+        .modal-close {
+            position: absolute;
+            top: .3em;
+            right: .3em;
+            padding: .3em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-banner">
+        <div class="top-banner-inner">
+            <p>Find out what's going on at Wombat Coffee each month. Sign up for our newsletter:
+                <button id="open">Sign up</button>
+            </p>
+        </div>
+    </header>
+    <!-- 模态框 -->
+    <div class="modal" id="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-body">
+            <button class="modal-close" id="close">close</button>
+            <h2>Wombat newsletter</h2>
+            <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+            <form>
+                <p>
+                    <label for="email">Email address:</label>
+                    <input type="text" name="email" />
+                </p>
+                <p><button type="submit">Submit</button></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.getElementById('open');
+        let close = document.getElementById('close');
+        let modal = document.getElementById('modal');
+
+        btn.addEventListener('click', function(event) {
+            event.preventDefault(); //阻止事件的默认行为，按钮的默认行为是提交表单或刷新页面
+            modal.style.display = 'block';
+        })
+
+        close.addEventListener('click', function(event) {
+            event.preventDefault();
+            modal.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
