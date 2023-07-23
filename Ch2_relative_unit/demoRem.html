@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 根元素14px */
+        :root {
+            font-size: .875em;
+        }
+
+        .panel {
+            font-size: 1rem;
+            padding: 1em;
+            border-radius: .5em;
+            border: 1px solid #999;
+        }
+
+        .panel > h2 {
+            margin-top: 0;
+            /* 用em定义其他字号，使其相对父元素的字号 */
+            font-size: .8em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* 如果选择器有两个类 需要选中的话就连着一起写 */
+        .panel.large {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h2>Single-origin</h2>
+        <div class="panel-body">
+            We have built partnerships with small farms around the world to hand-select beans 
+            at the peak of season. We then carefully roast in 
+            <a href="/batch-size">small batches</a> to maximize their potential.
+        </div>
+    </div>
+    <div class="panel large">
+        <h2>Single-origin</h2>
+        <div class="panel-body">
+            We have built partnerships with small farms around the world to hand-select beans 
+            at the peak of season. We then carefully roast in 
+            <a href="/batch-size">small batches</a> to maximize their potential.
+        </div>
+    </div>
+</body>
+</html>

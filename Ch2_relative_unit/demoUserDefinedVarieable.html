@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* 变量名: --main-font， 必须要有-- */
+            --main-font: Helvetica, Arial, sans-serif;
+            --brand-color: #369;
+        }
+
+        p {
+            /* 调用var()使用变量，将段落的字体设置为 Helvetica, Arial, sans-serif*/
+            /* var（变量，值）,接受备用值，一旦变量没定义就可以用备用值 */
+            font-family: var(--main-font, sans-serif);
+            color: var(--secondary-color, blue);
+        } 
+
+
+    </style>
+</head>
+<body>
+    <p>
+        We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.
+    </p>
+</body>
+</html>
